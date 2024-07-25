@@ -8,12 +8,18 @@ function Modal({ isOpen, onClose, onAccept }) {
   return (
     <div style={styles.overlay} onClick={onClose}>
       <div style={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <button style={styles.closeButton} onClick={onClose}>
+        <button
+          style={styles.closeButton}
+          onClick={onClose}
+          data-testid='close-button'
+        >
           ×
         </button>
         <div style={styles.content}>
           <img src={CookieIcon} alt='Cookie Icon' style={styles.icon} />
-          <h2 style={styles.title}>We use cookies</h2>
+          <h2 style={styles.title} data-testid='modal-title'>
+            We use cookies
+          </h2>
           <p style={styles.text}>
             This website uses cookies to ensure you get the best experience on
             our website
