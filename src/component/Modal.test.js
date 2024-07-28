@@ -17,7 +17,6 @@ describe('Modal Component', () => {
       <Modal isOpen={true} onClose={handleClose} onAccept={handleAccept} />
     )
 
-    // Check if the modal content is rendered
     expect(screen.getByText('We use cookies')).toBeInTheDocument()
     expect(
       screen.getByText(
@@ -25,7 +24,6 @@ describe('Modal Component', () => {
       )
     ).toBeInTheDocument()
 
-    // Check if the Accept button is rendered
     expect(screen.getByText('Accept')).toBeInTheDocument()
   })
 
@@ -34,10 +32,8 @@ describe('Modal Component', () => {
       <Modal isOpen={true} onClose={handleClose} onAccept={handleAccept} />
     )
 
-    // Click the close button
     fireEvent.click(screen.getByTestId('close-button'))
 
-    // Check if the handleClose function is called
     expect(handleClose).toHaveBeenCalledTimes(1)
   })
 
@@ -46,7 +42,6 @@ describe('Modal Component', () => {
       <Modal isOpen={false} onClose={handleClose} onAccept={handleAccept} />
     )
 
-    // Check if the modal content is not rendered
     expect(screen.queryByText('We use cookies')).not.toBeInTheDocument()
     expect(
       screen.queryByText(
