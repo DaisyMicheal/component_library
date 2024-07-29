@@ -1,16 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import CookieIcon from '../assets/cookies.svg'
 
 function Modal({ isOpen, onClose, onAccept }) {
-  if (!isOpen) return null
+  const [isModalOpen, setIsModalOpen] = useState(isOpen)
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false)
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true)
+  }
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false)
+  }
+
+  const handleAcceptModal = () => {
+    setShowSuccessMessage(true)
+    setTimeout(() => {
+      setShowSuccessMessage(false)
+      setIsModalOpen(false)
+      onAccept && onAccept() // Call the onAccept function if provided
+    }, 2000) // Display the success message for 2 seconds
+  }
+
+  if (!isModalOpen) {
+    return (
+      <div style={styles.showModalContainer}>
+        <button style={styles.showModalButton} onClick={handleOpenModal}>
+          Show Modal
+        </button>
+      </div>
+    )
+  }
 
   return (
-    <div style={styles.overlay} onClick={onClose}>
+    <div style={styles.overlay} onClick={handleCloseModal}>
       <div style={styles.modal} onClick={(e) => e.stopPropagation()}>
         <button
           style={styles.closeButton}
-          onClick={onClose}
+          onClick={handleCloseModal}
           data-testid='close-button'
         >
           ×
@@ -22,21 +50,26 @@ function Modal({ isOpen, onClose, onAccept }) {
           </h2>
           <p style={styles.text}>
             This website uses cookies to ensure you get the best experience on
-            our website
+            our website.
           </p>
-          <button style={styles.acceptButton} onClick={onAccept}>
+          <button style={styles.acceptButton} onClick={handleAcceptModal}>
             Accept
           </button>
         </div>
+        {showSuccessMessage && (
+          <div style={styles.successMessage}>
+            Cookies accepted successfully!
+          </div>
+        )}
       </div>
     </div>
   )
 }
 
 Modal.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired,
-  onAccept: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool,
+  onClose: PropTypes.func,
+  onAccept: PropTypes.func,
 }
 
 const styles = {
@@ -95,6 +128,32 @@ const styles = {
     borderRadius: '5px',
     padding: '10px 20px',
     cursor: 'pointer',
+    fontWeight: 'bold',
+  },
+  showModalContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100vh',
+  },
+  showModalButton: {
+    backgroundColor: '#007BFF',
+    color: '#fff',
+    border: 'none',
+    borderRadius: '5px',
+    padding: '10px 20px',
+    cursor: 'pointer',
+    fontWeight: 'bold',
+    transition: 'background-color 0.3s ease',
+  },
+  successMessage: {
+    marginTop: '20px',
+    padding: '10px',
+    backgroundColor: '#d4edda',
+    color: '#155724',
+    border: '1px solid #c3e6cb',
+    borderRadius: '5px',
+    fontSize: '16px',
     fontWeight: 'bold',
   },
 }

@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Modal Component Library
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This library provides a customizable React modal component that can be used to display messages, such as cookie consent information, to users. The modal features an icon, title, message, and an accept button. When the user accepts the cookies, a success message is shown briefly.
 
-## Available Scripts
+# Installation
 
-In the project directory, you can run:
+- npm Install
 
-### `npm start`
+# Usage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To integrate the modal component into your application, follow these steps:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Import the Component: Start by importing the Modal component into your main application or the component where you want to use the modal.
 
-### `npm test`
+2. Manage Modal State: Use React's state management to control the visibility of the modal. Typically, this involves creating a state variable (e.g., isModalOpen) and corresponding functions to open and close the modal.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Render the Modal: In your component's render method, conditionally render the Modal component based on the state variable. Pass the necessary props (isOpen, onClose, onAccept) to control its behavior.
 
-### `npm run build`
+4. Handle User Actions: Define functions to handle user interactions, such as opening the modal, closing the modal, and accepting cookies. These functions should update the state accordingly and perform any additional actions (e.g., logging acceptance to the console).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Props
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The modal component accepts the following props:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- isOpen: Boolean that determines if the modal is open.
+- onClose: Function to call when the modal is closed.
+- onAccept: Function to call when the accept button is clicked.'
 
-### `npm run eject`
+# Customization
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+You can customize the appearance of the modal by modifying the styles object in the Modal.js file. Various styles are available for customization, such as the overlay, modal container, close button, content area, icon, title, text, accept button, show modal button, and success message.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or create a pull request.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Fork the repository.
+2. Create a new branch.
+3. Make your changes.
+4. Submit a pull request.
 
-## Learn More
+# License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License. See the LICENSE file for details.
