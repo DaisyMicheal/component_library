@@ -1,9 +1,18 @@
 import React from 'react'
+import Button from './component/Button'
 
 const App = () => {
+  const handleClick = () => {
+    console.log('Button clicked')
+  }
   return (
     <div>
-      <h1> just another component library</h1>
+      <Button
+        label='Click me'
+        backgroundColor='#007bff'
+        shadow
+        onClick={handleClick}
+      />
     </div>
   )
 }
