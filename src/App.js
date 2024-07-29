@@ -3,7 +3,7 @@ import Modal from './component/Modal'
 
 const App = () => {
   return (
-    <div>
+    <div className='App'>
       <Modal />
     </div>
   )
