@@ -1,18 +1,10 @@
 import React from 'react'
-import Button from './component/Button'
+import Modal from './component/Modal'
 
 const App = () => {
-  const handleClick = () => {
-    console.log('Button clicked')
-  }
   return (
-    <div>
-      <Button
-        label='Click me'
-        backgroundColor='#007bff'
-        shadow
-        onClick={handleClick}
-      />
+    <div className='App'>
+      <Modal />
     </div>
   )
 }
