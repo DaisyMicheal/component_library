@@ -1,10 +1,14 @@
 import React from 'react'
-import Modal from './component/Modal'
+import Form from './component/Form'
 
 const App = () => {
+  const handleSubmit = (formData) => {
+    console.log('Submitted:', formData)
+  }
+
   return (
     <div className='App'>
-      <Modal />
+      <Form onSubmit={handleSubmit} />
     </div>
   )
 }
