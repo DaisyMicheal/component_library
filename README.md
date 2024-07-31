@@ -114,7 +114,7 @@ Ensure you have Node.js and npm installed on your computer by running `node -v` 
 
 ### Pivotal Tracker
 
-Track the project's progress on [Pivotal Tracker](https://www.pivotaltracker.com/).
+Track the project's progress on [Pivotal Tracker](https://www.pivotaltracker.com/n/projects/2710500).
 
 ---
 
