@@ -1,18 +1,14 @@
 import React from 'react'
-import Button from './component/Button'
+import Form from './component/Form'
 
 const App = () => {
-  const handleClick = () => {
-    console.log('Button clicked')
+  const handleSubmit = (formData) => {
+    console.log('Submitted:', formData)
   }
+
   return (
-    <div>
-      <Button
-        label='Click me'
-        backgroundColor='#007bff'
-        shadow
-        onClick={handleClick}
-      />
+    <div className='App'>
+      <Form onSubmit={handleSubmit} />
     </div>
   )
 }
