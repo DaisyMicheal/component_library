@@ -2,9 +2,7 @@
 
 ---
 
-**Build Status**: ![Build Status](https://img.shields.io/badge/build-passing-brightgreen)  
-**Coverage Status**: ![Coverage Status](https://img.shields.io/badge/coverage-100%25-brightgreen)  
-**Maintainability**: ![Maintainability](https://img.shields.io/badge/maintainability-A-brightgreen)
+![Build Status](https://img.shields.io/badge/build-passing-brightgreen)  ![Coverage Status](https://img.shields.io/badge/coverage-100%25-brightgreen)  ![Maintainability](https://img.shields.io/badge/maintainability-A-brightgreen)
 
 ---
 
